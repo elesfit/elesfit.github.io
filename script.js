@@ -55,4 +55,71 @@
     window.addEventListener('resize', queueParallax, { passive: true });
     updateParallax();
   }
+
+  const slider = document.querySelector('[data-app-slider]');
+  if (slider) {
+    const viewport = slider.querySelector('[data-slider-viewport]');
+    const slides = [...slider.querySelectorAll('[data-app-slide]')];
+    const previous = slider.querySelector('[data-slider-prev]');
+    const next = slider.querySelector('[data-slider-next]');
+    const dots = [...slider.querySelectorAll('[data-slider-to]')];
+    const current = slider.querySelector('[data-slider-current]');
+    let activeIndex = -1;
+    let updateFrame = 0;
+
+    const updateActiveSlide = () => {
+      updateFrame = 0;
+      const width = viewport.clientWidth || 1;
+      const index = Math.max(0, Math.min(slides.length - 1, Math.round(viewport.scrollLeft / width)));
+      if (index === activeIndex) return;
+      activeIndex = index;
+      slides.forEach((slide, slideIndex) => {
+        slide.setAttribute('aria-hidden', String(slideIndex !== index));
+      });
+      dots.forEach((dot, dotIndex) => {
+        if (dotIndex === index) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+      if (current) current.textContent = String(index + 1).padStart(2, '0');
+      if (previous) previous.disabled = index === 0;
+      if (next) next.disabled = index === slides.length - 1;
+    };
+
+    const scheduleUpdate = () => {
+      if (!updateFrame) updateFrame = window.requestAnimationFrame(updateActiveSlide);
+    };
+
+    const goTo = (index) => {
+      const boundedIndex = Math.max(0, Math.min(slides.length - 1, index));
+      viewport.scrollTo({
+        left: viewport.clientWidth * boundedIndex,
+        behavior: reduceMotion ? 'auto' : 'smooth'
+      });
+      scheduleUpdate();
+    };
+
+    previous?.addEventListener('click', () => goTo(activeIndex - 1));
+    next?.addEventListener('click', () => goTo(activeIndex + 1));
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => goTo(Number(dot.dataset.sliderTo)));
+    });
+    viewport.addEventListener('scroll', scheduleUpdate, { passive: true });
+    viewport.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        goTo(activeIndex + 1);
+      } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        goTo(activeIndex - 1);
+      } else if (event.key === 'Home') {
+        event.preventDefault();
+        goTo(0);
+      } else if (event.key === 'End') {
+        event.preventDefault();
+        goTo(slides.length - 1);
+      }
+    });
+    window.addEventListener('resize', scheduleUpdate, { passive: true });
+    updateActiveSlide();
+  }
 })();
