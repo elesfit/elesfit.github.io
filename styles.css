@@ -226,11 +226,11 @@ button { color: inherit; }
 .coaching-copy .section-title { font-size: clamp(42px,5.4vw,72px); }
 .coaching-copy .section-lede { color: #c7c5c1; }
 .coaching-note { margin: 21px 0 0; padding: 13px 15px; border-left: 2px solid var(--brand); background: #1b1b1b; color: #c4c1bd; font-size: 9px; line-height: 1.8; }
-.coaching-media { display: grid; grid-template-columns: minmax(0,1.36fr) minmax(0,.74fr); gap: clamp(12px,2vw,22px); align-items: end; }
+.coaching-media { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(12px,2vw,22px); align-items: start; }
 .coaching-video, .coaching-still { min-width: 0; margin: 0; }
 .coaching-video-frame { border: 1px solid rgba(255,255,255,.13); background: var(--black); }
 .coaching-video video { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; background: var(--black); }
-.coaching-still img { display: block; width: 100%; aspect-ratio: 1 / 1; height: auto; object-fit: cover; object-position: center 40%; filter: saturate(.88) contrast(1.04); }
+.coaching-still img { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: cover; object-position: center 32%; filter: saturate(.88) contrast(1.04); }
 .coaching-media figcaption { display: grid; gap: 5px; margin: 0; padding-top: 10px; color: #e6e4e0; font-size: 9px; line-height: 1.6; }
 .coaching-media figcaption strong { font-family: var(--display); font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
 .coaching-media figcaption span { color: #aaa7a3; font-size: 8px; line-height: 1.7; }
@@ -432,7 +432,7 @@ button { color: inherit; }
   .proof-item strong { font-size: 19px; }
   .proof-item span:not(.proof-index) { margin-top: 3px; font-size: 8px; }
   .about { grid-template-columns: 1fr; gap: 30px; padding-block: 70px; }
-  .about-visual { width: min(82%,380px); margin-inline: auto 18px; padding: 0 0 18px 14px; }
+  .about-visual { width: min(82%,380px); margin-inline: auto; padding: 0 0 18px; }
   .about-visual-index { right: -17px; font-size: 8px; }
   .about-content p:not(.section-kicker) { font-size: 10px; line-height: 1.9; }
   .about-signoff { gap: 19px; margin-block: 20px; }
@@ -477,7 +477,7 @@ button { color: inherit; }
   .coaching-copy .section-title { font-size: clamp(42px,11vw,60px); }
   .coaching-note { margin-top: 16px; padding: 12px; font-size: 8px; }
   .coaching-media { grid-template-columns: 1fr; gap: 22px; }
-  .coaching-still { width: min(78%,300px); margin-left: auto; }
+  .coaching-still { width: 100%; margin: 0; }
   .method-step, .method-step:not(:first-child), .method-step:nth-child(even) { min-height: 0; padding: 20px 0 20px 49px; border-right: 0; border-top: 0; border-bottom: 1px solid var(--line); }
   .method-step::before, .method-step:not(:first-child)::before, .method-step:nth-child(even)::before { top: 20px; left: 0; font-size: 29px; }
   .method-step h3 { font-size: 21px; }
