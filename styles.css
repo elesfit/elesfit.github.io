@@ -230,7 +230,7 @@ button { color: inherit; }
 .coaching-video, .coaching-still { min-width: 0; margin: 0; }
 .coaching-video-frame { border: 1px solid rgba(255,255,255,.13); background: var(--black); }
 .coaching-video video { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; background: var(--black); }
-.coaching-still img { width: 100%; height: auto; object-fit: cover; object-position: center 40%; filter: saturate(.88) contrast(1.04); }
+.coaching-still img { display: block; width: 100%; aspect-ratio: 1 / 1; height: auto; object-fit: cover; object-position: center 40%; filter: saturate(.88) contrast(1.04); }
 .coaching-media figcaption { display: grid; gap: 5px; margin: 0; padding-top: 10px; color: #e6e4e0; font-size: 9px; line-height: 1.6; }
 .coaching-media figcaption strong { font-family: var(--display); font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
 .coaching-media figcaption span { color: #aaa7a3; font-size: 8px; line-height: 1.7; }
