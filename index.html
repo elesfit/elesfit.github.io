@@ -191,15 +191,15 @@
           </div>
         </header>
 
-        <div class="app-slider" data-app-slider role="region" aria-roledescription="carrusel" aria-label="Funciones de Planni en la asesoría ELESFIT">
-          <div class="app-slider-meta"><p>PLANNI <span>—</span> EXPLORÁ LAS FUNCIONES</p><p class="app-slider-count" aria-live="polite"><span data-slider-current>01</span><span> / 04</span></p></div>
+        <div class="app-slider" data-app-slider role="region" aria-roledescription="carrusel" aria-label="Funciones reales de Planni dentro de la asesoría ELESFIT">
+          <div class="app-slider-meta"><p>PLANNI <span>—</span> EXPLORÁ LA EXPERIENCIA</p><p class="app-slider-count" aria-live="polite"><span data-slider-current>01</span><span> / 04</span></p></div>
           <div class="app-slider-controls">
             <button type="button" class="app-slider-arrow" data-slider-prev aria-label="Ver función anterior" disabled>←</button>
             <div class="app-slider-dots" role="group" aria-label="Elegir función">
               <button type="button" data-slider-to="0" aria-label="Ver planificación personalizada" aria-current="true"></button>
               <button type="button" data-slider-to="1" aria-label="Ver entrenamiento"></button>
               <button type="button" data-slider-to="2" aria-label="Ver seguimiento"></button>
-              <button type="button" data-slider-to="3" aria-label="Ver acompañamiento"></button>
+              <button type="button" data-slider-to="3" aria-label="Ver acompañamiento y contacto"></button>
             </div>
             <button type="button" class="app-slider-arrow" data-slider-next aria-label="Ver función siguiente">→</button>
             <span class="app-slider-hint">Deslizá para explorar</span>
@@ -210,33 +210,47 @@
                 <div class="app-slide-copy">
                   <p class="app-chapter-index"><span>01</span> PLANIFICACIÓN PERSONALIZADA</p>
                   <h3>Una guía clara para tu semana.</h3>
-                  <p>Consultá qué entrenamiento está previsto para el día y cómo se organiza tu semana. La planificación se prepara para vos y queda disponible en tu espacio de alumno.</p>
+                  <p>Consultá el entrenamiento previsto para cada día y cómo se organiza tu semana. La planificación se prepara para vos y queda disponible en tu espacio de alumno.</p>
                   <p class="app-evidence">EN PANTALLA · Inicio, sesión del día y vista semanal</p>
                 </div>
                 <figure class="app-phone-figure app-phone-figure--planning">
-                  <div class="app-phone-stage"><img src="app-inicio.jpg" alt="Pantalla real de Planni: entrenamiento del día, vista semanal y accesos del alumno" width="406" height="816" loading="eager" decoding="async"><span class="app-stage-label" aria-hidden="true">PLANNI / INICIO</span></div>
+                  <div class="app-phone-stage"><img src="app-inicio.jpg" alt="Pantalla real de Planni: entrenamiento del día, vista semanal y accesos de contacto del alumno" width="406" height="816" loading="eager" decoding="async"><span class="app-stage-label" aria-hidden="true">PLANNI / INICIO</span></div>
                   <figcaption>Inicio · planificación asignada al alumno</figcaption>
                 </figure>
               </article>
 
-              <article class="app-slide" data-app-slide role="group" aria-roledescription="diapositiva" aria-label="2 de 4: entrenamiento" aria-hidden="true">
+              <article class="app-slide app-slide--reverse" data-app-slide role="group" aria-roledescription="diapositiva" aria-label="2 de 4: entrenamiento" aria-hidden="true">
                 <div class="app-slide-copy">
                   <p class="app-chapter-index"><span>02</span> ENTRENAMIENTO</p>
-                  <h3>Sabés qué hacer en cada sesión.</h3>
-                  <p>La rutina muestra los ejercicios y sus series, repeticiones y descansos. Durante el entrenamiento podés avanzar por los bloques y consultar el estado de la sesión.</p>
-                  <p class="app-evidence">EN PANTALLA · Ejercicios y parámetros de trabajo</p>
+                  <h3>Cada sesión, paso a paso.</h3>
+                  <p>Consultá ejercicios, series, repeticiones, descansos y el avance de la rutina. La ficha de ejercicio también muestra una demostración visual y pasos de ejecución.</p>
+                  <p class="app-evidence">EN PANTALLA · Rutina y ficha de ejercicio</p>
                 </div>
-                <figure class="app-phone-figure app-phone-figure--training">
-                  <div class="app-phone-stage"><img src="app-rutinas.jpg" alt="Pantalla real de Planni: rutina del día con ejercicios, series, repeticiones, descansos y avance de la sesión" width="397" height="816" loading="lazy" decoding="async"><span class="app-stage-label" aria-hidden="true">PLANNI / ENTRENAMIENTO</span></div>
-                  <figcaption>Sesión activa · lista de ejercicios y avance de la rutina</figcaption>
-                </figure>
+                <div class="app-training-views" data-app-screen-switcher>
+                  <div class="app-screen-tabs" role="tablist" aria-label="Elegir captura real de Planni para entrenamiento">
+                    <button type="button" class="app-screen-tab" id="app-rutina-tab" role="tab" aria-selected="true" aria-controls="app-rutina-panel" data-app-screen-tab>Rutina</button>
+                    <button type="button" class="app-screen-tab" id="app-ejercicio-tab" role="tab" aria-selected="false" aria-controls="app-ejercicio-panel" tabindex="-1" data-app-screen-tab>Ficha de ejercicio</button>
+                  </div>
+                  <div class="app-screen-panel" id="app-rutina-panel" role="tabpanel" aria-labelledby="app-rutina-tab" tabindex="0" data-app-screen-panel>
+                    <figure class="app-phone-figure app-phone-figure--training">
+                      <div class="app-phone-stage"><img src="app-rutinas.jpg" alt="Pantalla real de Planni: rutina del día con ejercicios, series, repeticiones, descansos y avance de la sesión" width="397" height="816" loading="lazy" decoding="async"><span class="app-stage-label" aria-hidden="true">PLANNI / RUTINA</span></div>
+                      <figcaption>Sesión activa · lista de ejercicios y avance de la rutina</figcaption>
+                    </figure>
+                  </div>
+                  <div class="app-screen-panel" id="app-ejercicio-panel" role="tabpanel" aria-labelledby="app-ejercicio-tab" tabindex="0" data-app-screen-panel hidden>
+                    <figure class="app-phone-figure app-phone-figure--exercise">
+                      <div class="app-phone-stage"><img src="app-ejercicios.jpg" alt="Pantalla real de Planni con una ficha de ejercicio, demostración visual y pasos escritos de ejecución" width="400" height="816" loading="lazy" decoding="async"><span class="app-stage-label" aria-hidden="true">PLANNI / EJERCICIO</span></div>
+                      <figcaption>Ficha del ejercicio · demostración visual e indicaciones de ejecución</figcaption>
+                    </figure>
+                  </div>
+                </div>
               </article>
 
               <article class="app-slide" data-app-slide role="group" aria-roledescription="diapositiva" aria-label="3 de 4: seguimiento" aria-hidden="true">
                 <div class="app-slide-copy">
                   <p class="app-chapter-index"><span>03</span> SEGUIMIENTO</p>
                   <h3>Registrá lo que hiciste.</h3>
-                  <p>Cargá repeticiones y peso en cada serie, indicá cómo te sentiste y guardá tus métricas para mantener el registro del entrenamiento.</p>
+                  <p>Cargá repeticiones y peso en cada serie, indicá cómo te sentiste y guardá una nota. Así queda el registro de tus sesiones.</p>
                   <p class="app-evidence">EN PANTALLA · Series, carga, sensación y nota</p>
                 </div>
                 <figure class="app-phone-figure app-phone-figure--tracking">
@@ -245,22 +259,26 @@
                 </figure>
               </article>
 
-              <article class="app-slide" data-app-slide role="group" aria-roledescription="diapositiva" aria-label="4 de 4: acompañamiento" aria-hidden="true">
+              <article class="app-slide app-slide--reverse app-slide--closing" data-app-slide role="group" aria-roledescription="diapositiva" aria-label="4 de 4: acompañamiento y contacto" aria-hidden="true">
                 <div class="app-slide-copy">
                   <p class="app-chapter-index"><span>04</span> ACOMPAÑAMIENTO</p>
-                  <h3>Un acceso directo a tu entrenador.</h3>
-                  <p>Desde Inicio podés enviar un mensaje, abrir WhatsApp o escribir por correo. El tipo y la frecuencia del seguimiento dependen del plan ELESFIT elegido.</p>
-                  <p class="app-evidence">EN PANTALLA · Mensaje, WhatsApp y correo</p>
+                  <h3>El seguimiento se adapta a tu plan.</h3>
+                  <p>Desde Inicio encontrás accesos a mensaje, WhatsApp y correo. El tipo y la frecuencia del acompañamiento dependen del plan ELESFIT que elegiste.</p>
                 </div>
-                <figure class="app-phone-figure app-phone-figure--support">
-                  <div class="app-phone-stage"><img src="app-inicio.jpg" alt="Pantalla real de Planni con el perfil del entrenador y accesos a mensaje, WhatsApp y correo" width="406" height="816" loading="lazy" decoding="async"><span class="app-stage-label" aria-hidden="true">PLANNI / CONTACTO</span></div>
-                  <figcaption>Inicio · accesos de contacto disponibles en la app</figcaption>
-                </figure>
+                <div class="app-slide-proof">
+                  <p class="app-proof-kicker">ACCESOS VISIBLES EN INICIO</p>
+                  <ul class="app-contact-list" aria-label="Canales de contacto disponibles">
+                    <li>Mensaje</li>
+                    <li>WhatsApp</li>
+                    <li>Correo</li>
+                  </ul>
+                  <p>La plataforma acompaña el trabajo que planificamos juntos.</p>
+                </div>
               </article>
             </div>
           </div>
         </div>
-        <p class="app-authenticity-note">Pantallas reales de Planni, sin interfaces ficticias. La asesoría online no requiere encuentros presenciales; el seguimiento depende del plan.</p>
+        <p class="app-authenticity-note">Capturas reales de Planni, completas y sin interfaces ficticias. El seguimiento depende del plan; la asesoría online no requiere encuentros presenciales.</p>
       </div>
     </section>
 
