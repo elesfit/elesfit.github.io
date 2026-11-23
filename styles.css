@@ -180,7 +180,7 @@ button { font: inherit; }
 .sys-media-app .phone { position: absolute; left: 50%; top: 34px; transform: translateX(-50%) rotate(-8deg); transition: transform 0.8s var(--ease); }
 .sys-card:hover .sys-media-app .phone { transform: translateX(-50%) rotate(-4deg) translateY(-8px); }
 .sys-media-app .phone .screen { filter: none; }
-.sys-num { position: absolute; z-index: 2; top: 16px; left: 18px; font-family: var(--f-num); font-weight: 500; font-size: 40px; line-height: 1; color: var(--red); }
+.sys-num { position: absolute; z-index: 2; top: 16px; left: 18px; font-family: var(--f-num); font-weight: 500; font-size: 40px; line-height: 1; color: var(--red); text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9); }
 .sys-body { flex-grow: 1; display: flex; flex-direction: column; gap: 12px; padding: 28px 28px 30px; }
 .sys-body h3 { font-family: var(--f-title); font-weight: 600; font-size: 28px; letter-spacing: 0.06em; text-transform: uppercase; }
 .sys-body p { flex-grow: 1; font-size: 15px; font-weight: 300; line-height: 1.65; color: var(--muted); }
