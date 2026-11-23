@@ -180,7 +180,7 @@ button { font: inherit; }
 .sys-media-app .phone { position: absolute; left: 50%; top: 34px; transform: translateX(-50%) rotate(-8deg); transition: transform 0.8s var(--ease); }
 .sys-card:hover .sys-media-app .phone { transform: translateX(-50%) rotate(-4deg) translateY(-8px); }
 .sys-media-app .phone .screen { filter: none; }
-.sys-num { position: absolute; z-index: 2; top: 16px; left: 18px; font-family: var(--f-num); font-weight: 500; font-size: 40px; line-height: 1; color: var(--red); }
+.sys-num { position: absolute; z-index: 2; top: 16px; left: 18px; font-family: var(--f-num); font-weight: 500; font-size: 40px; line-height: 1; color: var(--red); text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9); }
 .sys-body { flex-grow: 1; display: flex; flex-direction: column; gap: 12px; padding: 28px 28px 30px; }
 .sys-body h3 { font-family: var(--f-title); font-weight: 600; font-size: 28px; letter-spacing: 0.06em; text-transform: uppercase; }
 .sys-body p { flex-grow: 1; font-size: 15px; font-weight: 300; line-height: 1.65; color: var(--muted); }
@@ -233,6 +233,16 @@ button { font: inherit; }
 .ba-block { display: flex; flex-direction: column; gap: 18px; }
 .ba-head { font-family: var(--f-title); font-size: 14px; letter-spacing: 0.26em; text-transform: uppercase; }
 .ba-head em { font-style: normal; color: var(--red); }
+.ba-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+.ba-sub { font-family: var(--f-body); font-size: 12px; letter-spacing: 0.02em; text-transform: none; color: var(--soft); }
+.ba-card { margin: 0; display: flex; flex-direction: column; gap: 14px; padding: 14px; background: var(--graphite-2); border: 1px solid rgba(255, 255, 255, 0.1); transition: border-color 0.4s, transform 0.5s var(--ease); }
+.ba-card:hover { border-color: rgba(230, 69, 77, 0.6); transform: translateY(-4px); }
+.ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.ba-shot { position: relative; aspect-ratio: 2 / 3; overflow: hidden; background: var(--graphite-3); }
+.ba-shot img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; }
+.ba-tag { position: absolute; left: 8px; bottom: 8px; padding: 3px 8px; background: var(--black); font-family: var(--f-title); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); }
+.ba-tag-after { background: var(--red); color: var(--black); }
+.ba-card figcaption { padding: 0 4px 2px; font-family: var(--f-title); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; }
 .featured-quote { margin: 0; display: flex; flex-wrap: wrap; background: #060606; border: 1px solid rgba(255, 255, 255, 0.1); }
 .fq-media { position: relative; flex: 1 1 340px; min-height: 420px; overflow: hidden; }
 .fq-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: grayscale(1) contrast(1.2) brightness(0.9); }
