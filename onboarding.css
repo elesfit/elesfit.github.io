@@ -111,7 +111,7 @@ body.ef-page { margin: 0; min-width: 320px; background: var(--ef-black); color: 
   .ef-welcome-photo { max-width: 720px; }
   .ef-welcome-photo img { aspect-ratio: 1.55 / 1; }
   .ef-hero-index { bottom: 21px; }
-  .ef-registration-layout { width: min(100% - 52px, 720px); grid-template-columns: 1fr; gap: 40px; }
+  .ef-registration-layout { width: min(100% - 52px, 720px); grid-template-columns: minmax(0,1fr); gap: 40px; }
   .ef-registration-editorial { position: static; }
   .ef-registration-photo img { max-height: 290px; }
 }

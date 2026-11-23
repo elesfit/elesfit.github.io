@@ -209,7 +209,7 @@ button { color: inherit; }
 .method { background: #faf9f6; color: var(--ink); }
 .method-intro { max-width: 780px; }
 .method-intro .section-title { max-width: 700px; }
-.method-track { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 0; margin-top: 49px; border-top: 1px solid var(--line); }
+.method-track { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0; margin-top: 49px; border-top: 1px solid var(--line); }
 .method-step { min-height: 200px; position: relative; padding: 60px 19px 22px 0; border-right: 1px solid var(--line); }
 .method-step:not(:first-child) { padding-left: 18px; }
 .method-step:last-child { border-right: 0; }
