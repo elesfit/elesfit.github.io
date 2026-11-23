@@ -56,6 +56,75 @@
     updateParallax();
   }
 
+  const currencySwitcher = document.querySelector('[data-currency-switcher]');
+  if (currencySwitcher) {
+    const currencyButtons = [...currencySwitcher.querySelectorAll('[data-currency-value]')];
+    const currencyNote = currencySwitcher.querySelector('[data-currency-note]');
+    const planCards = [...document.querySelectorAll('[data-plan-card]')];
+
+    const setCurrency = (currency) => {
+      const isUsd = currency === 'usd';
+      currencyButtons.forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.currencyValue === currency));
+      });
+
+      planCards.forEach((card) => {
+        const planName = card.dataset.planName;
+        const amount = isUsd ? card.dataset.priceUsd : card.dataset.priceArs;
+        const price = card.querySelector('[data-plan-price]');
+        const period = card.querySelector('[data-plan-period]');
+        const cta = card.querySelector('[data-plan-cta]');
+        const note = card.querySelector('[data-plan-note]');
+        const mercadoPagoUrl = (card.dataset.mpUrl || '').trim();
+
+        if (price) price.textContent = amount;
+        if (period) period.textContent = isUsd ? 'USD · mes' : 'ARS / mes';
+
+        if (isUsd) {
+          const message = `Hola Lean, vengo desde los planes de la web de ELESFIT. Me interesa el plan ${planName} (${amount} por mes) y quisiera consultarte cómo abonarlo en dólares. ¿Qué medios de pago están disponibles y cómo puedo empezar?`;
+          if (cta) {
+            cta.href = `https://wa.me/5491169128457?text=${encodeURIComponent(message)}`;
+            cta.textContent = 'Consultar pago en dólares';
+            cta.setAttribute('aria-label', `Consultar medios de pago en dólares para ${planName}, ${amount} por mes`);
+            cta.target = '_blank';
+            cta.rel = 'noopener';
+          }
+          if (note) note.textContent = 'WhatsApp se abrirá con un mensaje para consultar cómo abonar este plan en dólares.';
+        } else if (mercadoPagoUrl) {
+          if (cta) {
+            cta.href = mercadoPagoUrl;
+            cta.textContent = 'Pagar con Mercado Pago';
+            cta.setAttribute('aria-label', `Pagar ${planName} con Mercado Pago, ${amount} por mes`);
+            cta.target = '_blank';
+            cta.rel = 'noopener';
+          }
+          if (note) note.textContent = 'Pago en pesos argentinos mediante Mercado Pago.';
+        } else {
+          const message = `Hola Lean, vi los planes en la web de ELESFIT y me interesa el plan ${planName} (${amount} ARS por mes). Prefiero pagar en pesos argentinos. ¿Me compartís el enlace de Mercado Pago para empezar?`;
+          if (cta) {
+            cta.href = `https://wa.me/5491169128457?text=${encodeURIComponent(message)}`;
+            cta.textContent = 'Pedir link de Mercado Pago';
+            cta.setAttribute('aria-label', `Pedir el enlace de Mercado Pago para ${planName}, ${amount} por mes`);
+            cta.target = '_blank';
+            cta.rel = 'noopener';
+          }
+          if (note) note.textContent = 'Te comparto por WhatsApp el enlace de Mercado Pago.';
+        }
+      });
+
+      if (currencyNote) {
+        currencyNote.textContent = isUsd
+          ? 'En dólares, cada plan muestra su precio mensual y abre WhatsApp para consultar los medios de pago.'
+          : 'En pesos argentinos, cada botón abre el enlace de pago de Mercado Pago.';
+      }
+    };
+
+    currencyButtons.forEach((button) => {
+      button.addEventListener('click', () => setCurrency(button.dataset.currencyValue));
+    });
+    setCurrency('ars');
+  }
+
   const slider = document.querySelector('[data-app-slider]');
   if (slider) {
     const viewport = slider.querySelector('[data-slider-viewport]');
