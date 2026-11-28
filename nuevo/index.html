@@ -103,7 +103,7 @@ h2 em,h1 em{font-style:normal;color:var(--r)}
 .mm-panel a{font-family:Oswald;font-size:26px;text-transform:uppercase;padding:8px 0;border-bottom:1px solid var(--ln)}
 .mm-panel a.sm{font-family:Poppins;font-size:15px;text-transform:none}
 /* hero */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:130px 0 40px;overflow:hidden}
+.hero{display:flex;flex-direction:column;justify-content:flex-end;padding:120px 0 36px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{position:absolute;right:0;top:0;height:100%;width:72%;object-fit:cover;object-position:70% 30%;filter:grayscale(1) contrast(1.12) brightness(.8)}
 .hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000 26%,rgba(0,0,0,.65) 48%,rgba(0,0,0,.1) 75%,rgba(0,0,0,.45)),linear-gradient(0deg,#000 2%,transparent 40%),radial-gradient(45% 55% at 78% 40%,rgba(161,48,54,.42),transparent 70%)}
@@ -113,14 +113,50 @@ h2 em,h1 em{font-style:normal;color:var(--r)}
 .hero-in{position:relative;z-index:2}
 .pill{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(var(--inv),.18);background:rgba(var(--glassc),.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:8px 16px;border-radius:999px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px}
 .pill i{width:8px;height:8px;border-radius:50%;background:var(--r)}
-.hero h1{font-size:clamp(56px,9.4vw,132px);font-weight:700;max-width:900px}
+.hero h1{font-size:clamp(48px,5.8vw,88px);font-weight:700;max-width:760px;margin-bottom:20px}
 .hero h1 .o{color:transparent;-webkit-text-stroke:2px var(--fg)}
 .hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-top:28px;flex-wrap:wrap}
 .hero .lead{font-size:17px}
 .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:26px}
 .hero-note{font-size:13px;color:var(--soft);margin-top:16px}
 .hero-note a{color:var(--fg);text-decoration:underline;text-decoration-color:var(--r);text-underline-offset:4px}
-.statbar{position:relative;z-index:2;margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);background:rgba(var(--glassc),.7);border:1px solid var(--ln);border-radius:10px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:end}
+.hero-grid>*{min-width:0}
+.quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.quick a{font-size:12px;letter-spacing:.06em;padding:8px 14px;border:1px solid rgba(var(--inv),.2);border-radius:999px;background:rgba(var(--glassc),.4);transition:border-color .2s,background .2s}
+.quick a:hover{border-color:var(--r);background:rgba(230,69,77,.12)}
+.qp{background:rgba(var(--glassc),.72);border:1px solid rgba(var(--inv),.14);border-radius:14px;padding:18px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.qp-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:10px}
+.qp-h b{font-family:Oswald;font-size:20px;text-transform:uppercase}
+.qp-h span{font-size:11px;color:var(--g)}
+.qr{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border:1px solid rgba(var(--inv),.1);border-radius:10px;margin-top:8px;transition:border-color .2s,transform .2s}
+.qr:hover{border-color:var(--r);transform:translateX(3px)}
+.qr b{font-family:Oswald;font-size:19px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.qr b u{text-decoration:none;font-family:Poppins;font-size:9px;font-weight:700;letter-spacing:.12em;background:var(--r);color:#fff;padding:3px 7px;border-radius:3px}
+.qr small{display:block;font-size:12px;color:var(--soft);line-height:1.35}
+.qr em{font-style:normal;font-family:Teko;font-weight:500;font-size:30px;line-height:1;white-space:nowrap}
+.qr em i{font-family:Poppins;font-style:normal;font-size:11px;color:var(--g);margin-left:2px}
+.qr.hot{border-color:rgba(230,69,77,.7);background:rgba(230,69,77,.12)}
+.qp-f{display:block;text-align:center;margin-top:12px;font-size:13px;font-weight:600;color:var(--r)}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.fit>div{padding:26px;border-radius:12px;border:1px solid var(--ln);background:var(--card)}
+.fit h3{font-size:24px;font-weight:600;margin-bottom:14px}
+.fit ul{list-style:none;display:grid;gap:10px}
+.fit li{display:flex;gap:10px;font-size:14px;color:var(--soft)}
+.fit li:before{flex:none;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;margin-top:1px}
+.fit .yes{border-color:rgba(230,69,77,.5)}
+.fit .yes li:before{content:"✓";background:var(--r);color:#fff}
+.fit .no li:before{content:"✕";background:rgba(var(--inv),.1);color:var(--g)}
+.packs{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px;margin-top:34px;align-items:stretch}
+.pk-h h3{font-size:32px;font-weight:700;margin:8px 0}.pk-h h3 em{font-style:normal;color:var(--r)}
+.pk-h p{font-size:14px;color:var(--soft)}
+.pk{padding:22px;border:1px solid var(--ln);border-radius:12px;background:var(--card);display:flex;flex-direction:column;gap:2px}
+.pk b{font-family:Oswald;font-size:18px;text-transform:uppercase}
+.pk s{font-size:13px;color:var(--g)}
+.pk strong{font-family:Teko;font-weight:600;font-size:52px;line-height:.9}
+.pk small{font-size:12px;color:var(--r);font-weight:600;margin-bottom:14px}
+.pk .btn{margin-top:auto}
+.statbar{position:relative;z-index:2;margin-top:34px;display:grid;grid-template-columns:repeat(4,1fr);background:rgba(var(--glassc),.7);border:1px solid var(--ln);border-radius:10px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .sb{display:flex;align-items:center;gap:16px;padding:22px 26px}
 .sb+.sb{border-left:1px solid var(--ln)}
 .sb svg{width:30px;height:30px;flex:none;stroke:var(--r);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
@@ -365,6 +401,7 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
   .sys{grid-template-columns:1fr}
   .app-grid{grid-template-columns:1fr;gap:30px}
   .stage{min-height:560px;order:-1}.stage .num{font-size:220px}.stage .ring{width:400px;height:400px}.stage .phone{--w:250px}
+  .hero-grid{grid-template-columns:1fr}
   .test{grid-template-columns:1fr}.tside{position:relative;top:0}
   .about-g,.faq-g{grid-template-columns:1fr;gap:50px}
   .ft-top{grid-template-columns:1fr 1fr}
@@ -375,14 +412,20 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
   .head{display:block;margin-bottom:34px}.head .lead{margin-top:16px}
   .hd{height:66px}.hd .btn{display:none}.mm-panel{top:66px}
   .hero{padding:96px 0 28px;min-height:0}
-  .hero-bg img{width:100%;height:62%;object-position:62% 25%}
+  .hero-bg img{width:100%;height:46%;object-position:62% 22%}
   .hero-bg:after{background:linear-gradient(0deg,#000 40%,rgba(0,0,0,.55) 62%,rgba(0,0,0,.15) 85%,rgba(0,0,0,.5)),radial-gradient(70% 40% at 60% 25%,rgba(161,48,54,.4),transparent 70%)}
   .hero .vt{display:none}
-  .hero-in{padding-top:min(48vh,380px)}
-  .pill{font-size:10px;padding:7px 12px}
-  .hero h1{font-size:15vw}
-  .hero .lead{font-size:15px}
-  .hero-cta{gap:16px}.hero-cta .btn{width:100%}
+  .hero-in{padding-top:min(22vh,170px)}
+  .pill{display:none}
+  .hero h1{font-size:12.4vw}
+  .hero-grid{gap:22px}
+  .hero h1{margin-bottom:12px}
+  .quick{flex-wrap:nowrap;overflow-x:auto;margin:16px -18px 0;padding:0 18px 4px;scrollbar-width:none}
+  .quick::-webkit-scrollbar{display:none}
+  .quick a{white-space:nowrap}
+  .qp{padding:14px}.qr{padding:10px 12px}.qr b{font-size:17px}.qr em{font-size:26px}
+  .hero .lead{font-size:14.5px;line-height:1.55}
+  .hero-cta{gap:10px;margin-top:18px}.hero-cta .btn{width:100%;min-height:50px}
   .statbar{grid-template-columns:1fr 1fr;margin-top:36px}
   .sb{padding:16px;gap:12px}.sb+.sb{border-left:0}
   .sb:nth-child(even){border-left:1px solid var(--ln)}.sb:nth-child(n+3){border-top:1px solid var(--ln)}
@@ -402,6 +445,7 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
   .opts button{flex:1 1 100%;text-align:left}
   .tside{padding:26px}
   .plans{grid-template-columns:1fr;gap:26px}
+  .fit,.packs{grid-template-columns:1fr}
   .pc.ft{transform:none;order:-1}
   .steps{grid-template-columns:1fr}
   .steps li+li{border-left:0;border-top:1px solid var(--ln)}
@@ -456,17 +500,26 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
   <div class="hero-bg"><img src="/assets/leandro-training.webp" alt="Leandro Espinosa entrenando con mancuernas en el gimnasio" width="1208" height="682" fetchpriority="high"></div>
   <div class="vt" aria-hidden="true"><span>ELESFIT</span><span>1:1</span></div>
   <div class="wrap hero-in">
-    <span class="pill"><i></i>Entrenamiento personalizado · Online y presencial</span>
-    <h1 id="hero-title">No necesitás <span class="o">otra rutina.</span><br><em>Necesitás un plan.</em></h1>
-    <div class="hero-row">
+    <div class="hero-grid">
       <div>
+        <span class="pill"><i></i>Entrenamiento personalizado · Online y presencial</span>
+        <h1 id="hero-title">No necesitás <span class="o">otra rutina.</span><br><em>Necesitás un plan.</em></h1>
         <p class="lead">Diseño tu entrenamiento según tu objetivo, tu nivel y tu tiempo. Lo seguís desde la app y lo ajustamos a medida que progresás.</p>
         <div class="hero-cta">
           <a class="btn" href="https://wa.me/5491169128457?text=Hola%20Lean%2C%20quiero%20consultarte%20por%20las%20asesor%C3%ADas%20ELESFIT." target="_blank" rel="noopener">Quiero mi plan <svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
-          <a class="play" href="#sistema"><i><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></i>Cómo trabajo</a>
+          <a class="btn gh" href="https://wa.me/5491169128457?text=Hola%20Lean%2C%20quiero%20agendar%20una%20consulta%20gratis%20de%2015%20minutos%20para%20ver%20qu%C3%A9%20plan%20me%20conviene." target="_blank" rel="noopener">Consulta gratis · 15 min</a>
         </div>
-        <p class="hero-note">Planes mensuales desde $20.000 · <a href="/bienvenido/">¿Ya contrataste? Seguí acá</a></p>
+        <nav class="quick" aria-label="Accesos rápidos">
+          <a href="#resultados">Resultados</a><a href="#test">Test de 30 s</a><a href="#app">La app</a><a href="/Reto90/">Reto 90</a><a href="/bienvenido/">Ya pagué</a><a href="https://elesfit.planni.ar/login">Ya soy alumno</a>
+        </nav>
       </div>
+      <aside class="qp" aria-label="Planes y precios">
+        <div class="qp-h"><b>Elegí tu plan</b><span>Mensual · cancelás cuando quieras</span></div>
+        <a class="qr" href="#plan-base"><span><b>Base</b><small>Rutina a medida + app</small></span><em>$20.000<i>/mes</i></em></a>
+        <a class="qr hot" href="#plan-pro"><span><b>Pro <u>Más elegido</u></b><small>+ seguimiento y ajustes mensuales</small></span><em>$40.000<i>/mes</i></em></a>
+        <a class="qr" href="#plan-elite"><span><b>Élite</b><small>+ corrección técnica y guía alimentaria</small></span><em>$75.000<i>/mes</i></em></a>
+        <a class="qp-f" href="#packs">Pack 3 meses con 10% off →</a>
+      </aside>
     </div>
     <div class="statbar rv">
       <div class="sb"><svg viewBox="0 0 24 24"><path d="M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12"/></svg><div><b>+5</b><span>Años de<br>experiencia</span></div></div>
@@ -554,7 +607,10 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
       <a class="gc rv" href="https://wa.me/5491169128457?text=Hola%20Lean%2C%20quiero%20ganar%20m%C3%BAsculo.%20%C2%BFQu%C3%A9%20plan%20me%20conviene%3F" target="_blank" rel="noopener"><span class="bg"><img src="/assets/leandro-portrait-editorial.webp" alt="" loading="lazy" style="object-position:center 30%"></span><span class="in"><span class="bn">02</span><small>Objetivo 02</small><strong>Ganar músculo</strong><p>Entrenamiento progresivo y bien planificado para ganar masa muscular y fuerza.</p><span class="go">Consultar <svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span></a>
       <a class="gc rv" href="https://wa.me/5491169128457?text=Hola%20Lean%2C%20quiero%20empezar%20a%20entrenar%20con%20un%20plan.%20%C2%BFQu%C3%A9%20plan%20me%20conviene%3F" target="_blank" rel="noopener"><span class="bg"><img src="/assets/leandro-with-bar.webp" alt="" loading="lazy" style="object-position:62% center"></span><span class="in"><span class="bn">03</span><small>Objetivo 03</small><strong>Entrenar con orden</strong><p>Dejar de improvisar: saber qué hacer cada día, en casa o en el gimnasio.</p><span class="go">Consultar <svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span></a>
     </div>
-    <div class="notfor rv"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg><p><strong>Quizás no sea para vos si</strong> esperás resultados garantizados en un plazo fijo, buscás una rutina genérica sin seguimiento o no querés participar del proceso ni compartir la información necesaria para personalizar tu plan.</p></div>
+    <div class="fit rv">
+      <div class="yes"><h3>Es para vos si…</h3><ul><li>Empezás o volvés a entrenar y querés hacerlo bien desde el inicio.</li><li>Entrenás hace tiempo pero sentís que no avanzás.</li><li>Querés un plan a tu medida, en casa o en el gimnasio.</li><li>Querés que alguien siga tu progreso y ajuste el plan.</li></ul></div>
+      <div class="no"><h3>No es para vos si…</h3><ul><li>Esperás resultados garantizados en un plazo fijo.</li><li>Buscás una rutina genérica sin seguimiento.</li><li>No querés participar del proceso ni compartir la información necesaria para personalizar tu plan.</li></ul></div>
+    </div>
   </div>
 </section>
 
@@ -633,7 +689,7 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
       </div>
     </div>
     <div class="plans">
-      <article class="pc rv" data-plan-card data-plan-key="base" data-plan-name="ELESFIT Base" data-price-ars="$20.000" data-price-usd="USD 25" data-mp-url="https://mpago.la/1ynkFtq">
+      <article class="pc rv" id="plan-base" data-plan-card data-plan-key="base" data-plan-name="ELESFIT Base" data-price-ars="$20.000" data-price-usd="USD 25" data-mp-url="https://mpago.la/1ynkFtq">
         <span class="bgn" aria-hidden="true">01</span>
         <span class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
         <h3>Base</h3><p class="for">Para vos si ya sabés entrenar y querés un plan a medida.</p>
@@ -643,7 +699,7 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
         <p class="note" data-plan-note>Pago en pesos argentinos mediante Mercado Pago.</p>
         <a class="after" href="/bienvenido/?plan=base">¿Ya pagaste? Seguí tu incorporación</a>
       </article>
-      <article class="pc ft rv" data-plan-card data-plan-key="pro" data-plan-name="ELESFIT Pro" data-price-ars="$40.000" data-price-usd="USD 45" data-mp-url="https://mpago.la/1rNzmjq">
+      <article class="pc ft rv" id="plan-pro" data-plan-card data-plan-key="pro" data-plan-name="ELESFIT Pro" data-price-ars="$40.000" data-price-usd="USD 45" data-mp-url="https://mpago.la/1rNzmjq">
         <span class="badge">Más elegido</span>
         <span class="bgn" aria-hidden="true">02</span>
         <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></span>
@@ -654,7 +710,7 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
         <p class="note" data-plan-note>Pago en pesos argentinos mediante Mercado Pago.</p>
         <a class="after" href="/bienvenido/?plan=pro">¿Ya pagaste? Seguí tu incorporación</a>
       </article>
-      <article class="pc rv" data-plan-card data-plan-key="elite" data-plan-name="ELESFIT Élite" data-price-ars="$75.000" data-price-usd="USD 80" data-mp-url="https://mpago.la/1Wg2TU6">
+      <article class="pc rv" id="plan-elite" data-plan-card data-plan-key="elite" data-plan-name="ELESFIT Élite" data-price-ars="$75.000" data-price-usd="USD 80" data-mp-url="https://mpago.la/1Wg2TU6">
         <span class="bgn" aria-hidden="true">03</span>
         <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 8l4 4 5-7 5 7 4-4-2 11H5z"/></svg></span>
         <h3>Élite</h3><p class="for">Para vos si querés corrección técnica y guía alimentaria.</p>
@@ -664,6 +720,11 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
         <p class="note" data-plan-note>Pago en pesos argentinos mediante Mercado Pago.</p>
         <a class="after" href="/bienvenido/?plan=elite">¿Ya pagaste? Seguí tu incorporación</a>
       </article>
+    </div>
+    <div class="packs rv" id="packs">
+      <div class="pk-h"><span class="kick" style="margin:0">Ahorrá</span><h3>Pack 3 meses <em>con 10% off</em></h3><p>Pagás los 3 meses juntos y te asegurás el proceso completo. Solo en pesos.</p></div>
+      <div class="pk"><b>Pro · 3 meses</b><s>$120.000</s><strong>$108.000</strong><small>Ahorrás $12.000</small><a class="btn blk" href="https://wa.me/5491169128457?text=Hola%20Lean%2C%20quiero%20el%20pack%20de%203%20meses%20del%20plan%20ELESFIT%20Pro%20(%24108.000)." target="_blank" rel="noopener">Quiero el pack Pro</a></div>
+      <div class="pk"><b>Élite · 3 meses</b><s>$225.000</s><strong>$202.500</strong><small>Ahorrás $22.500</small><a class="btn gh blk" href="https://wa.me/5491169128457?text=Hola%20Lean%2C%20quiero%20el%20pack%20de%203%20meses%20del%20plan%20ELESFIT%20%C3%89lite%20(%24202.500)." target="_blank" rel="noopener">Quiero el pack Élite</a></div>
     </div>
     <div class="howto rv"><h3>Cómo empezar en <em>3 pasos</em></h3><p class="fine" style="margin:6px 0 18px">Ni crear una cuenta ni completar el formulario activan el plan: tu acceso se habilita cuando verifico el pago y tus datos.</p><ol class="steps rv">
       <li><span class="sn">01</span><h3>Elegí y pagá</h3><p>Elegí Base, Pro o Élite. En pesos pagás con Mercado Pago; en dólares coordinamos por WhatsApp.</p></li>
@@ -722,7 +783,8 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
       <details><summary>¿Qué tengo que hacer después del pago?</summary><p>En <a href="/bienvenido/">/bienvenido</a>, compartí manualmente el comprobante por WhatsApp y seguí el enlace a <a href="/registro/">/registro</a> para completar en Tally siete datos básicos. Revisaré el comprobante y tus datos. Una vez verificada la contratación, prepararé tu plan en PLANNI y te daré acceso cuando esté listo. La visita a la página no confirma el pago.</p></details>
       <details><summary>¿Completar el formulario o crear una cuenta activa mi plan?</summary><p>No. El formulario de ingreso no confirma el pago ni activa el acceso automáticamente. Primero reviso el comprobante y tus datos; cuando la contratación esté verificada, preparo tu plan y te otorgo acceso a PLANNI cuando esté listo. El cuestionario completo de evaluación se completa luego dentro de la plataforma.</p></details>
       <details><summary>¿Cómo mantengo el acceso a mi plan?</summary><p>La asesoría se organiza mes a mes. Para continuar con la asesoría, coordinamos el pago y el seguimiento mensual. Si no se renueva, el acceso al plan puede deshabilitarse. Consultame si necesitás conocer los detalles.</p></details>
-      <details><summary>¿No sé qué plan elegir?</summary><p>Escribime y contame tu objetivo, dónde entrenás y qué tipo de acompañamiento buscás. Lo vemos juntos, sin compromiso. También podés hacer el <a href="#test">test de 30 segundos</a>.</p></details>
+      <details><summary>¿Puedo pagar varios meses juntos?</summary><p>Sí. Pro y Élite tienen un pack de 3 meses con 10% de descuento, en pesos. Escribime por WhatsApp y te paso cómo pagarlo.</p></details>
+      <details><summary>¿No sé qué plan elegir?</summary><p>Escribime y contame tu objetivo, dónde entrenás y qué tipo de acompañamiento buscás. Lo vemos juntos, sin compromiso, en una consulta gratis de 15 minutos. También podés hacer el <a href="#test">test de 30 segundos</a>.</p></details>
     </div>
   </div>
 </section>
