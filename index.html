@@ -459,6 +459,41 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
   .mbar{display:block;position:fixed;z-index:64;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(var(--glassc),.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--ln);transform:translateY(110%);transition:transform .3s}
   .mbar.on{transform:none}.mbar .btn{width:100%;min-height:50px}
 }
+
+/* test paso a paso */
+.stepper .tq{display:none;animation:tqin .35s ease}
+.stepper .tq.cur{display:block}
+@keyframes tqin{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.tprog{display:flex;align-items:center;gap:12px;margin-top:24px;font-size:12px;color:var(--soft);letter-spacing:.06em;text-transform:uppercase}
+.tprog .tr{flex:1;height:4px;border-radius:4px;background:var(--ln);overflow:hidden}
+.tprog .tr i{display:block;height:100%;width:33%;background:var(--r);transition:width .35s}
+.tback{background:none;border:0;color:var(--r);font:inherit;font-weight:600;cursor:pointer;text-transform:none;letter-spacing:0}
+.swbar{display:none}
+@media (max-width:760px){
+  .sec{padding-top:56px!important;padding-bottom:56px!important}
+  .sw{display:flex!important;grid-template-columns:none!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;margin-left:-18px!important;margin-right:-18px!important;padding:6px 18px 8px!important;scrollbar-width:none;align-items:stretch!important;max-width:none!important}
+  .sw::-webkit-scrollbar{display:none}
+  .sw>*{flex:0 0 84%;scroll-snap-align:center;min-width:0;margin:0!important}
+  .sw>.rv{opacity:1!important;transform:none!important;transition:none!important}
+  .swbar{display:flex;align-items:center;gap:12px;margin-top:14px}
+  .swbar .tr{flex:1;height:3px;background:var(--ln);border-radius:3px;overflow:hidden}
+  .swbar .tr i{display:block;height:100%;width:0;background:var(--r);transition:width .2s}
+  .swbar small{font-family:Teko;font-size:20px;line-height:1;color:var(--soft);min-width:38px;text-align:right}
+  .swbar button{width:34px;height:34px;border-radius:50%;border:1px solid var(--ln);background:var(--card);color:var(--fg);display:grid;place-items:center;font-size:16px;cursor:pointer}
+  .tside .tempty{display:none}
+  .tside:has(.tempty:not([hidden])){display:none}
+  .fq .im{display:none}
+  .packs{grid-template-columns:1fr 1fr!important;gap:10px!important}
+  .pk-h{grid-column:1/-1}
+  .pk{padding:14px!important}.pk b{font-size:14px}.pk strong{font-size:34px}.pk small{margin-bottom:10px}
+  .pk .btn{font-size:11px!important;padding:0 8px!important;min-height:44px}
+  .howto{padding:20px!important}
+  .howto .steps.sw>li{flex-basis:78%;padding:16px!important;border:1px solid var(--ln);border-radius:12px;background:var(--bg)}
+  .howto .steps li:before,.howto .steps li:after{display:none!important}
+  .ft-top{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:22px 12px!important}
+  .ft-top>div:first-child{grid-column:1/-1}
+  .ft-col a{font-size:12px}
+}
 </style>
 <script>try{var t=localStorage.getItem("elesfit-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 </head>
@@ -544,7 +579,7 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
         <p class="fine">El video muestra una sesión presencial real como ejemplo de acompañamiento técnico. La asesoría online no incluye encuentros presenciales.</p>
       </div>
     </div>
-    <div class="sys-grid">
+    <div class="sys-grid sw">
       <article class="sc rv">
         <div class="md"><img src="/assets/leandro-with-bar.webp" alt="Leandro Espinosa entrenando fuerza con barra" width="1080" height="608" loading="lazy" decoding="async" style="object-position:62% center"></div>
         <div class="bd"><span class="n">01</span><h3>Tu plan</h3><p>Una planificación hecha según tu objetivo, tu nivel, tu tiempo y si entrenás en casa o en el gimnasio.</p><a class="lk" href="#planes">Ver planes <svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div>
@@ -601,12 +636,12 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
       <div><span class="kick"><b>03</b>¿Cuál es tu objetivo?</span><h2 id="objetivos-title">Elegí tu objetivo.<br><span class="out">El plan lo armo yo.</span></h2></div>
       <p class="lead">Tocá el que más se parece a lo que buscás y escribime directo. Te respondo con el plan que mejor te sirve.</p>
     </div>
-    <div class="goals">
+    <div class="goals sw">
       <a class="gc rv" href="https://wa.me/5491169128457?text=Hola%20Lean%2C%20quiero%20bajar%20grasa.%20%C2%BFQu%C3%A9%20plan%20me%20conviene%3F" target="_blank" rel="noopener"><span class="bg"><img src="/assets/leandro-coaching.webp" alt="" loading="lazy"></span><span class="in"><span class="bn">01</span><small>Objetivo 01</small><strong>Bajar grasa</strong><p>Mejorar tu composición corporal sin vivir a dieta, con un plan que puedas sostener.</p><span class="go">Consultar <svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span></a>
       <a class="gc rv" href="https://wa.me/5491169128457?text=Hola%20Lean%2C%20quiero%20ganar%20m%C3%BAsculo.%20%C2%BFQu%C3%A9%20plan%20me%20conviene%3F" target="_blank" rel="noopener"><span class="bg"><img src="/assets/leandro-portrait-editorial.webp" alt="" loading="lazy" style="object-position:center 30%"></span><span class="in"><span class="bn">02</span><small>Objetivo 02</small><strong>Ganar músculo</strong><p>Entrenamiento progresivo y bien planificado para ganar masa muscular y fuerza.</p><span class="go">Consultar <svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span></a>
       <a class="gc rv" href="https://wa.me/5491169128457?text=Hola%20Lean%2C%20quiero%20empezar%20a%20entrenar%20con%20un%20plan.%20%C2%BFQu%C3%A9%20plan%20me%20conviene%3F" target="_blank" rel="noopener"><span class="bg"><img src="/assets/leandro-with-bar.webp" alt="" loading="lazy" style="object-position:62% center"></span><span class="in"><span class="bn">03</span><small>Objetivo 03</small><strong>Entrenar con orden</strong><p>Dejar de improvisar: saber qué hacer cada día, en casa o en el gimnasio.</p><span class="go">Consultar <svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span></a>
     </div>
-    <div class="fit rv">
+    <div class="fit rv sw">
       <div class="yes"><h3>Es para vos si…</h3><ul><li>Empezás o volvés a entrenar y querés hacerlo bien desde el inicio.</li><li>Entrenás hace tiempo pero sentís que no avanzás.</li><li>Querés un plan a tu medida, en casa o en el gimnasio.</li><li>Querés que alguien siga tu progreso y ajuste el plan.</li></ul></div>
       <div class="no"><h3>No es para vos si…</h3><ul><li>Esperás resultados garantizados en un plazo fijo.</li><li>Buscás una rutina genérica sin seguimiento.</li><li>No querés participar del proceso ni compartir la información necesaria para personalizar tu plan.</li></ul></div>
     </div>
@@ -622,7 +657,7 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
       <div><span class="kick"><b>04</b>Resultados y experiencias</span><h2 id="resultados-title">Lo que cuentan quienes <em>entrenan conmigo.</em></h2></div>
       <p class="lead">Procesos reales de alumnos de ELESFIT. Deslizá sobre cada foto para comparar el antes y el después.</p>
     </div>
-    <div class="res-grid">
+    <div class="res-grid sw">
       <figure class="ba rv"><div class="cmp"><img src="/assets/resultados/maribel-despues.webp" alt="Maribel, después de entrenar con ELESFIT" loading="lazy"><img class="bf" src="/assets/resultados/maribel-antes.webp" alt="Maribel, antes de entrenar con ELESFIT" loading="lazy"><div class="hl"></div><span class="lb l">Antes</span><span class="lb a">Después</span><input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después de Maribel"></div><figcaption>Maribel <span>Alumna ELESFIT</span></figcaption></figure>
       <figure class="ba rv"><div class="cmp"><img src="/assets/resultados/rodrigo-despues.webp" alt="Rodrigo, después de entrenar con ELESFIT" loading="lazy"><img class="bf" src="/assets/resultados/rodrigo-antes.webp" alt="Rodrigo, antes de entrenar con ELESFIT" loading="lazy"><div class="hl"></div><span class="lb l">Antes</span><span class="lb a">Después</span><input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después de Rodrigo"></div><figcaption>Rodrigo <span>Alumno ELESFIT</span></figcaption></figure>
       <figure class="ba rv"><div class="cmp"><img src="/assets/resultados/rebeca-despues.webp" alt="Rebeca, después de entrenar con ELESFIT" loading="lazy"><img class="bf" src="/assets/resultados/rebeca-antes.webp" alt="Rebeca, antes de entrenar con ELESFIT" loading="lazy"><div class="hl"></div><span class="lb l">Antes</span><span class="lb a">Después</span><input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después de Rebeca"></div><figcaption>Rebeca <span>Alumna ELESFIT</span></figcaption></figure>
@@ -635,7 +670,7 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
         <figcaption class="who"><b>Sabrina</b><span class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span></figcaption>
       </div>
     </figure>
-    <div class="tst">
+    <div class="tst sw">
       <figure class="tc rv"><span class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span><blockquote>“Su planificación se ajusta a los objetivos que estás buscando, es muy responsable y respetuoso. Tiene mucho conocimiento y te asesora de manera integral. ¡Es un excelente profesional! Te desafía a ir más allá de tus límites y te ayuda a ganar confianza en cada clase.”</blockquote><figcaption><span class="av">G</span>Giselle</figcaption></figure>
       <figure class="tc rv"><span class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span><blockquote>“¡Es el mejor! Entreno con él desde julio y mis resultados han sido increíbles. Además de enseñarte la técnica correcta para los ejercicios, también sabe de nutrición y te acompaña en todo el proceso. 100% recomendado.”</blockquote><figcaption><span class="av">R</span>Rebecca F.</figcaption></figure>
       <figure class="tc rv"><span class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span><blockquote>“Leandro es un entrenador personal genial. Me ayudó a desarrollar un plan de entrenamiento personalizado después de mi operación de rodilla. Me enseñó los conceptos básicos de la biomecánica. ¡Tengo más energía y me siento genial! Mis rodillas nunca se sintieron mejor.”</blockquote><figcaption><span class="av">J</span>Josué</figcaption></figure>
@@ -654,7 +689,7 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
       <span class="kick"><b>05</b>Test de 30 segundos</span>
       <h2 id="test-title">¿Qué plan <em>te conviene?</em></h2>
       <p class="lead" style="margin-top:16px">Respondé tres preguntas y te digo cuál es el plan para vos.</p>
-      <div data-plan-test>
+      <div data-plan-test class="stepper"><div class="tprog"><span data-step-lbl>Pregunta 1 de 3</span><div class="tr"><i data-step-bar></i></div><button type="button" class="tback" data-step-back hidden>‹ Volver</button></div>
         <fieldset class="tq"><legend><span>01</span>¿Cuánta experiencia tenés entrenando?</legend><div class="opts"><button type="button" data-q="q1" data-value="nuevo" aria-pressed="false">Estoy empezando o volviendo</button><button type="button" data-q="q1" data-value="exp" aria-pressed="false">Entreno hace tiempo</button></div></fieldset>
         <fieldset class="tq"><legend><span>02</span>¿Cuánto acompañamiento querés?</legend><div class="opts"><button type="button" data-q="q2" data-value="solo" aria-pressed="false">Me organizo solo</button><button type="button" data-q="q2" data-value="soporte" aria-pressed="false">Quiero soporte y ajustes</button><button type="button" data-q="q2" data-value="todo" aria-pressed="false">Quiero corrección técnica</button></div></fieldset>
         <fieldset class="tq"><legend><span>03</span>¿Querés guía alimentaria?</legend><div class="opts"><button type="button" data-q="q3" data-value="no" aria-pressed="false">No, por ahora</button><button type="button" data-q="q3" data-value="si" aria-pressed="false">Sí, quiero orientación</button></div></fieldset>
@@ -687,7 +722,7 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
         <p class="cur-note" data-currency-note>En pesos argentinos, cada botón abre el enlace de pago de Mercado Pago.</p>
       </div>
     </div>
-    <div class="plans">
+    <div class="plans sw">
       <article class="pc rv" id="plan-base" data-plan-card data-plan-key="base" data-plan-name="ELESFIT Base" data-price-ars="$20.000" data-price-usd="USD 25" data-mp-url="https://mpago.la/1ynkFtq">
         <span class="bgn" aria-hidden="true">01</span>
         <span class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
@@ -725,7 +760,7 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
       <div class="pk"><b>Pro · 3 meses</b><s>$120.000</s><strong>$108.000</strong><small>Ahorrás $12.000</small><a class="btn blk" href="https://mpago.la/1xLtrPF" target="_blank" rel="noopener">Pagar pack Pro</a></div>
       <div class="pk"><b>Élite · 3 meses</b><s>$225.000</s><strong>$202.500</strong><small>Ahorrás $22.500</small><a class="btn gh blk" href="https://mpago.la/2XJEJ8A" target="_blank" rel="noopener">Pagar pack Élite</a></div>
     </div>
-    <div class="howto rv"><h3>Cómo empezar en <em>3 pasos</em></h3><p class="fine" style="margin:6px 0 18px">Ni crear una cuenta ni completar el formulario activan el plan: tu acceso se habilita cuando verifico el pago y tus datos.</p><ol class="steps rv">
+    <div class="howto rv"><h3>Cómo empezar en <em>3 pasos</em></h3><p class="fine" style="margin:6px 0 18px">Ni crear una cuenta ni completar el formulario activan el plan: tu acceso se habilita cuando verifico el pago y tus datos.</p><ol class="steps rv sw">
       <li><span class="sn">01</span><h3>Elegí y pagá</h3><p>Elegí Base, Pro o Élite. En pesos pagás con Mercado Pago; en dólares coordinamos por WhatsApp.</p></li>
       <li><span class="sn">02</span><h3>Enviá tus datos</h3><p>En <a href="/bienvenido/">/bienvenido</a> me mandás el comprobante por WhatsApp y completás un formulario corto en <a href="/registro/">/registro</a>.</p></li>
       <li><span class="sn">03</span><h3>Recibí tu plan</h3><p>Verifico el pago y tus datos, armo tu plan y te habilito el acceso a PLANNI.</p></li>
@@ -918,6 +953,15 @@ footer{padding:70px 0 40px;overflow:hidden;border-top:1px solid var(--ln)}
 </script>
 <script>
 document.querySelectorAll("[data-theme-toggle]").forEach(function(b){b.addEventListener("click",function(){var r=document.documentElement,n=r.getAttribute("data-theme")==="light"?"dark":"light";r.setAttribute("data-theme",n);var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=n==="light"?"#ffffff":"#000000";try{localStorage.setItem("elesfit-theme",n)}catch(e){}})});
+</script>
+<script>
+/* Test paso a paso */
+(function(){const st=document.querySelector(".stepper");if(!st)return;const qs=[...st.querySelectorAll(".tq")],lbl=st.querySelector("[data-step-lbl]"),bar=st.querySelector("[data-step-bar]"),back=st.querySelector("[data-step-back]");let i=0;
+const show=n=>{i=Math.max(0,Math.min(qs.length-1,n));qs.forEach((q,k)=>q.classList.toggle("cur",k===i));const done=qs.filter(q=>q.querySelector('[aria-pressed="true"]')).length;lbl.textContent=done===qs.length?"¡Listo! Mirá tu plan":"Pregunta "+(i+1)+" de "+qs.length;bar.style.width=(Math.max(done,i)+(done===qs.length?0:1))/qs.length*100+"%";back.hidden=i===0;};
+st.addEventListener("click",e=>{const b=e.target.closest("[data-q]");if(!b)return;const k=qs.indexOf(b.closest(".tq"));setTimeout(()=>{if(k<qs.length-1)show(k+1);else{show(k);const r=document.querySelector("[data-test-result]");if(r&&innerWidth<760)setTimeout(()=>r.scrollIntoView({behavior:"smooth",block:"center"}),150);}},260);});
+back.addEventListener("click",()=>show(i-1));show(0);})();
+/* Carruseles en celular */
+document.querySelectorAll(".sw").forEach(sw=>{const n=sw.children.length;const bar=document.createElement("div");bar.className="swbar";bar.innerHTML='<button type="button" aria-label="Anterior">‹</button><div class="tr"><i></i></div><small>1/'+n+'</small><button type="button" aria-label="Siguiente">›</button>';sw.after(bar);const fill=bar.querySelector("i"),lab=bar.querySelector("small"),[pv,nx]=bar.querySelectorAll("button");const step=()=>sw.children[0].getBoundingClientRect().width+12;const up=()=>{const max=sw.scrollWidth-sw.clientWidth;const r=max>0?sw.scrollLeft/max:1;const k=Math.min(n,Math.round(r*(n-1))+1);fill.style.width=(k/n*100)+"%";lab.textContent=k+"/"+n;};sw.addEventListener("scroll",up,{passive:true});up();pv.onclick=()=>sw.scrollBy({left:-step(),behavior:"smooth"});nx.onclick=()=>sw.scrollBy({left:step(),behavior:"smooth"});});
 </script>
 </body>
 </html>
